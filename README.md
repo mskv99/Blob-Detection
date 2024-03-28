@@ -10,28 +10,28 @@
 
 
 ## Алгоритм детектирования выбросов
-Предлагаемый алгоритм обработки изображений позволяет болеее эффективно детектировать выбросы, чем существующие решения: BlobDetector и NLOG(Normalized Laplacian of Gaussian). 
+Предлагаемый алгоритм обработки изображений позволяет болеее эффективно детектировать выбросы, чем существующие решения: [BlobDetector](https://learnopencv.com/blob-detection-using-opencv-python-c/) и [NLOG](https://cave.cs.columbia.edu/Statics/monographs/SIFT%20Detector%20FPCV-2-3.pdf)(Normalized Laplacian of Gaussian). 
 
-В основе алгоритма лежит предположение о том, что т.н. выбросы — это обла- сти белых пикселей в окружении черных. Варьируя как размер самого выброса, так и размер окружения, было найдено оптимальное условие фильтрации пикселей изображения.
+В основе алгоритма лежит предположение о том, что т.н. выбросы — это области белых пикселей в окружении черных. Варьируя как размер самого выброса, так и размер окружения, было найдено оптимальное условие фильтрации пикселей изображения.
 
 
 # Запуск программы
 
 `usage: kernel_detection.py [-h] [--save_result] [--output OUTPUT] input`
 
-Необходимо определить абсолютные пути до файла входного и выходного(в случае если нужно сохранить результат детекции выбросов) изоюарежний.
+Необходимо определить абсолютные пути до файла входного и выходного(в случае если нужно сохранить результат детекции выбросов) изображений.
 
 **Positional arguments**:
 
-  **input**            Path for input file
+**-input**            Path for input file
 
 **Optional arguments**:
 
- **-h, --help**       show this help message and exit
+**-h, --help**       show this help message and exit
+ 
+**--save_result**    Save output result
   
-  **--save_result**    Save output result
-  
-  **--output** OUTPUT  Path for output file
+**--output** OUTPUT  Path for output file
 
   Пример 1:
   ```
